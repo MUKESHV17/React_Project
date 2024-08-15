@@ -1,0 +1,29 @@
+import React, { Component } from "react"
+
+class ToggleMessage extends Component{
+    constructor()
+    {
+        super();
+        this.setState={
+            message : true
+        }
+    };
+    toggleMessage =() =>
+    {
+        this.setState(prevState => (
+            {
+                message : prevState.message ===  true ? false : true
+            }
+        ));
+    };
+    render()
+    {
+        return(
+            <div>
+                <button onClick={this.ToggleMessage}>{this.state.isVisible === true ? 'Showcomponent' : 'Hidecomponent'} </button>
+                {this.state.message &&<p>Hi, How are you!!!</p>}
+            </div>
+        );
+    };
+};
+export default ToggleMessage;
